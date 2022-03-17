@@ -3,21 +3,26 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div id="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div id='atm_body'>
+          <div id='atm_upper'>
+            <div id='buttons_left'>
+              <div className='btn' id='btn1'>►</div>
+              <div className='btn' id='btn2'>►</div>
+              <div className='btn' id='btn3'>►</div>
+            </div> 
+            <div id='display'></div>
+            <div id='buttons_right'>
+              <div className='btn' id='btn4'>◄</div>
+              <div className='btn' id='btn5'>◄</div>
+              <div className='btn' id='btn6'>◄</div>
+            </div>
+        </div>
+        </div>
+        <a id='credits' href='https://github.com/M3rhy123'>Made by M3RHY</a>
       </header>
+      
     </div>
   );
 }
