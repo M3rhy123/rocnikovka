@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .header{
     background-color: #282c34;
     min-height: 100vh;
@@ -21,18 +23,6 @@
     width: auto;
     height: 300px;
     position: relative;
-}
-
-
-
-#buttons_left{
-    margin-top: 25px;
-    float: left;
-
-}
-
-#btn1,#btn2,#btn3,#btn4,#btn5,#btn6{
-    margin-bottom: 50px;
 }
 
 .btn{
@@ -100,28 +90,39 @@ span{
 }
 
 #buttons_right{
-    margin-top: 25px;
+    margin-top: 15px;
     float: right;
+}
+
+#buttons_left{
+    margin-top: 15px;
+    float: left;
+}
+
+#btn1,#btn2,#btn3,#btn5,#btn6,#btn7{
+    margin-bottom: 25px;
 }
 
 
 #display{
     height: 300px;
     width: 500px;
-    background-color: black;
+    background-color: #5a5e93;
     position: absolute;
     margin-left: 75px;
-    border: #1c1d20 5px solid;
+    border: #303236 5px solid;
 }
 
 #credits{
+    color: black;
+    margin-top: 50px;
     background-color: #1c1d20;
     padding: 5px;
     border: 5px solid #000000;
     border-radius: 10px;
     text-decoration: none;
     transition: 0.3s;
-
+    font-family: 'Oswald', sans-serif;
 }
 
 #credits:hover{
