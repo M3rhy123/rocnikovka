@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
+*{box-sizing: border-box}
+
 .header{
     background-color: #282c34;
     min-height: 100vh;
@@ -12,8 +14,8 @@
 }
 
 #atm_body{
-    width: 650px;
-    height: 600px;
+    width: 700px;
+    height: 650px;
     background-color: #373c46;
     padding: 25px;
     border-radius: 5px;
@@ -60,12 +62,10 @@
 }
 
 #keypad{
-    height: 235px;
-    width: 355px;
+
     margin-top: 25px;
     margin-left: 5px;
-    padding-top: 15px;
-    padding-left: 10px;
+    padding: 20px;
     position: absolute;
     background-color: #1c1d20;
     border: 10px  #282c34 solid;
@@ -90,12 +90,14 @@ span{
 }
 
 #buttons_right{
-    margin-top: 15px;
+    position: relative;
+    margin-top: 10px;
     float: right;
 }
 
 #buttons_left{
-    margin-top: 15px;
+    position: relative;
+    margin-top: 10px;
     float: left;
 }
 
@@ -108,9 +110,11 @@ span{
     height: 300px;
     width: 500px;
     background-color: #5a5e93;
-    position: absolute;
-    margin-left: 75px;
+    position: relative;
+    margin-left:20px;
+    margin-right: 20px;
     border: #303236 5px solid;
+    float: left;
 }
 
 #credits{

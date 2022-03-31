@@ -9,6 +9,11 @@
     color: white;
 }
 
+.menu{
+    position: relative;
+}
+
+
 .atm_btn {
     padding-top: 5px;
     color: #B8B8B8;
@@ -17,7 +22,23 @@
     width: 200px;
     height: 45px;
     margin-top: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-size: 75%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    -webkit-user-select: none;
+}
+
+.atm_btn_short {
+    position: relative;
+    padding-top: 5px;
+    color: #B8B8B8;
+    background-color: #1c1d20;
+    border-radius: 10px;
+    width: 50px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 30px;
     font-size: 75%;
     text-align: center;
     font-family: 'Oswald', sans-serif;
@@ -26,26 +47,29 @@
 
 #right{
     float: right;
-    margin-right: 5px;
+    margin-right: 10px;
+    position: relative;
 }
 
 #left{
     float: left;
-    margin-left: 5px;
+    margin-left: 10px;
+    position: relative;
 }
 
 .balance{
-    padding-top: 30px;
+    margin-top: 90px;
+    margin-left: 100px;
+    position: absolute;
     color: #B8B8B8;
     background-color: #1c1d20;
     border-radius: 10px;
     width: 300px;
     height: 100px;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    padding-top: 15px;
     font-size: 75%;
-    text-align: center;
     font-family: 'Oswald', sans-serif;
+    text-align: center;
     -webkit-user-select: none;
 }
 
