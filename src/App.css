@@ -1,15 +1,14 @@
 /*css for app.js*/
-.page{
+.page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 25vh;
-    font-size: calc(10px + 2vmin);
     color: white;
 }
 
-.menu{
+.menu {
     position: relative;
 }
 
@@ -29,6 +28,14 @@
     -webkit-user-select: none;
 }
 
+.atm_btn_i {
+    padding-top: 5px;
+    width: 200px;
+    height: 45px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
 .atm_btn_short {
     position: relative;
     padding-top: 5px;
@@ -45,19 +52,19 @@
     -webkit-user-select: none;
 }
 
-#right{
+#right {
     float: right;
     margin-right: 10px;
     position: relative;
 }
 
-#left{
+#left {
     float: left;
     margin-left: 10px;
     position: relative;
 }
 
-.balance{
+.page_msg {
     margin-top: 90px;
     margin-left: 100px;
     position: absolute;
@@ -73,7 +80,7 @@
     -webkit-user-select: none;
 }
 
-#back_btn{
+#back_btn {
     float: right;
     margin-right: 5px;
     margin-top: -2px;
