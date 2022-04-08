@@ -1,4 +1,5 @@
 import './App.css';
+import Print from './index.js'
 
 /** display buttons declaration */
 let btn1 = document.getElementById('btn1')
@@ -12,7 +13,6 @@ let btn8 = document.getElementById('btn8')
 
 /** numpad buttons declaration */
 let num_btn = document.getElementById('num_btn0')
-let num_btn1 = document.getElementById('num_btn1')
 let num_btn2 = document.getElementById('num_btn2')
 let num_btn3 = document.getElementById('num_btn3')
 let num_btn4 = document.getElementById('num_btn4')
@@ -25,240 +25,414 @@ let num_btn_esc = document.getElementById('num_btn_esc')
 let num_btn_backspace = document.getElementById('num_btn_backspace')
 let num_btn_enter = document.getElementById('num_btn_enter')
 
-let Blc = 100000;
+let Blc = 100;
 let pin;
+let page = 0;
+
+/** pin logic*/
+const star = "*";
+
+const Pin_function =  () =>{
+    document.getElementById('pin');
+}
+
+num_btn.onclick=Pin_function;
 
 /** pages body */
 
-const Lang = () => {
-    return (
-        <div className='menu'>
-            <div id='left'>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn'>ENG</div>
+const App = () => {
+    switch (page){
+        case 0:
+            /** Langue choose */
+            return (
+            <div className='menu'>
+                <div id='left'>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn'>ENG</div>
+                </div>
+                <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
+                <div id='right'>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn_i'/>
+                    <div className='atm_btn'>CZE</div>
+                </div>
             </div>
-            <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
-            <div id='right'>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn'>CZE</div>
-            </div>
-        </div>
-    );
+        );
+        case 1:
+            /** Pin page */
+            return (
+                <div className='menu'>
+                    <div className='page_msg'>Enter a pin:</div>
+                    <input type="number" id='pin'/>
+                </div>
+            );
+        case 2:
+            /** Menu */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn' id='bal'>Balance</div>
+                        <div className='atm_btn'>Withdraw</div>
+                        <div className='atm_btn'>Deposit</div>
+                        <div className='atm_btn'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn'>Change pin</div>
+                        <div className='atm_btn'>Payment</div>
+                        <div className='atm_btn'/>
+                        <div className='atm_btn'/>
+                    </div>
+                </div>
+            );
+        case 3:
+            /** Balance */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Your account balance is:<br/> $ {Blc}</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 4:
+            /** Widthraw */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_short'>1$</div>
+                        <div className='atm_btn_short'>2$</div>
+                        <div className='atm_btn_short'>5$</div>
+                        <div className='atm_btn_short'>10$</div>
+                    </div>
+                    <div className='page_msg'>How much do you<br/> want to Withdraw?</div>
+                    <div id='right'>
+                        <div className='atm_btn_short'>20$</div>
+                        <div className='atm_btn_short'>50$</div>
+                        <div className='atm_btn_short'>Other</div>
+                        <div className='atm_btn_short'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 5:
+            /** Deposit */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_short'>1$</div>
+                        <div className='atm_btn_short'>2$</div>
+                        <div className='atm_btn_short'>5$</div>
+                        <div className='atm_btn_short'>10$</div>
+                    </div>
+                    <div className='page_msg'>How much do you<br/> want to Deposit?</div>
+                    <div id='right'>
+                        <div className='atm_btn_short'>20$</div>
+                        <div className='atm_btn_short'>50$</div>
+                        <div className='atm_btn_short'>Other</div>
+                        <div className='atm_btn_short'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 6:
+            /** Choose Value*/
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 7:
+            /** Change pin */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 8:
+            /** Payment */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 9:
+            /** Loading */
+            return(
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Loading...</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
+    }
 }
 
-const Pin_page = () => {
-    return (
-        <header className='page'>
-            <div className='page_msg'>Please enter pin</div>
-            <div className='atm_btn' id='pin_insert'>{pin}</div>
-        </header>
-    );
-}
 
-const Menu = () => {
-    return (
-        <div className='menu'>
-            <div id='left'>
-                <div className='atm_btn'>Account balance</div>
-                <div className='atm_btn'>Withdraw</div>
-                <div className='atm_btn'>Deposit</div>
-                <div className='atm_btn'/>
-            </div>
-            <div id='right'>
-                <div className='atm_btn'>Change pin</div>
-                <div className='atm_btn'>Payment</div>
-                <div className='atm_btn'/>
-                <div className='atm_btn'/>
-            </div>
-        </div>
-    );
-
-}
-
-const Balance = () => {
-    return (
-        <div className='menu'>
-            <div id='left'>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-            </div>
-            <div className='page_msg'>Your account balance is:<br/> $ {Blc}</div>
-            <div id='right'>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn_i'/>
-                <div className='atm_btn'>Menu</div>
-            </div>
-        </div>
-    );
-}
-
-const Withdraw = () => {
-    return (
-        <div className='menu'>
-            <div id='left'>
-                <div className='atm_btn_short'>1$</div>
-                <div className='atm_btn_short'>2$</div>
-                <div className='atm_btn_short'>5$</div>
-                <div className='atm_btn_short'>10$</div>
-            </div>
-            <div className='page_msg'>How much do you<br/> want to Withdraw?</div>
-            <div id='right'>
-                <div className='atm_btn_short'>20$</div>
-                <div className='atm_btn_short'>50$</div>
-                <div className='atm_btn_short'>Other</div>
-                <div className='atm_btn_short'>Menu</div>
-            </div>
-        </div>
-    )
-}
-
-const Deposit = () => {
-    return (
-        <div className='menu'>
-            <div id='left'>
-                <div className='atm_btn_short'>1$</div>
-                <div className='atm_btn_short'>2$</div>
-                <div className='atm_btn_short'>5$</div>
-                <div className='atm_btn_short'>10$</div>
-            </div>
-            <div className='page_msg'>How much do you<br/> want to Deposit?</div>
-            <div id='right'>
-                <div className='atm_btn_short'>20$</div>
-                <div className='atm_btn_short'>50$</div>
-                <div className='atm_btn_short'>Other</div>
-                <div className='atm_btn_short'>Menu</div>
-            </div>
-        </div>
-    )
-}
-const Change_pin = () => {
-    return (
-        <div/>
-    )
-}
-
-const Payment = () => {
-    return (
-        <div/>
-    )
-}
-
-/** pages logic */
-
-let page = 2;
-let btn_value;
-
+/** buttons logic */
 const bnt1_click = () => {
-    btn_value = 1;
+    switch (page) {
+        case 2:
+            setTimeout(() => {
+                page = 3;
+                Print();
+                }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 1;
+            break;
+        case 5:
+            Blc = Blc + 1;
+            break;
+    }
 }
 btn1.onclick = bnt1_click;
 
 const bnt2_click = () => {
-    btn_value = 2;
+    switch (page) {
+        case 2:
+            setTimeout(() => {
+                page = 4;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 2;
+            break;
+        case 5:
+            Blc = Blc + 2;
+            break;
+    }
 }
 btn2.onclick = bnt2_click;
 
 const bnt3_click = () => {
-    btn_value = 3;
+    switch (page) {
+        case 2:
+            setTimeout(() => {
+                page = 5;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 5;
+            break;
+        case 5:
+            Blc = Blc + 5;
+            break;
+    }
 }
 btn3.onclick = bnt3_click;
 
 const bnt4_click = () => {
-    btn_value = 4;
+    switch (page) {
+        case 0:
+            //lang = "eng"
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 10;
+            break;
+        case 5:
+            Blc = Blc + 10;
+            break;
+    }
 }
 btn4.onclick = bnt4_click;
 
 const bnt5_click = () => {
-    btn_value = 5;
+    switch (page) {
+        case 2:
+            setTimeout(() => {
+                page = 7;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 20;
+            break;
+        case 5:
+            Blc = Blc + 20;
+            break;
+    }
 }
 btn5.onclick = bnt5_click;
 
 const bnt6_click = () => {
-    btn_value = 6;
+    switch (page) {
+        case 2:
+            setTimeout(() => {
+                page = 8;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            Blc = Blc - 50;
+            break;
+        case 5:
+            Blc = Blc + 50;
+            break;
+    }
 }
 btn6.onclick = bnt6_click;
 
 const bnt7_click = () => {
-    btn_value = 7;
+    switch (page) {
+        case 4:
+            setTimeout(() => {
+                page = 6;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 5:
+            page = 6;
+            break;
+    }
 }
 btn7.onclick = bnt7_click;
 
 const bnt8_click = () => {
-    btn_value = 8;
+    switch (page) {
+        case 0:
+            //lang = "cs";
+            setTimeout(() => {
+                page = 1;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 2:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 3:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 4:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 5:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 6:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 7:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+        case 8:
+            setTimeout(() => {
+                page = 2;
+                Print();
+            }, 1000);
+            page = 9;
+            Print();
+            break;
+    }
 }
 btn8.onclick = bnt8_click;
 
 
-switch (page) {
-    /** lang */
-    case 0:
-    /** pin */
-    case 1:
-    /** menu */
-    case 2:
-        switch (btn_value) {
-            case 1:
-                page = 3;
-                break;
-            case 2:
-                page = 4;
-                break;
-            case 3:
-                page = 5;
-                break;
-            case 4:
-                break;
-            case 5:
-                page = 6;
-                break;
-            case 6:
-                page = 7;
-                break;
-        }
-    /** bal */
-    case 3:
-    /** wid */
-    case 4:
-    /** dep */
-    case 5:
-    /** chp */
-    case 6:
-    /** pay */
-    case 7:
-    /** done */
-    case 8:
-}
 
-/** pages render */
-const page_choose = () => {
-    switch (page) {
-        case 0:
-            return (Lang)
-        case 1:
-            return (Pin_page)
-        case 2:
-            return (Menu)
-        case 3:
-            return (Balance)
-        case 4:
-            return (Withdraw)
-        case 5:
-            return (Deposit)
-        case 6:
-            return (Change_pin)
-        case 7:
-            return (Payment)
-        case 8:
-            return (0)
-    }
-}
+export default App;
 
-export default page_choose();
 

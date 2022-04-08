@@ -4,7 +4,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="theme-color" content="#000000"/>
-    <link rel="shortcut icon" href="atm.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pattern.kivan-works.com/fonts/kredit.css">
+    <link rel="shortcut icon" href="img/atm.ico">
     <link rel="stylesheet" href="css/style.css">
     <title>ATM simulator</title>
 </head>
@@ -29,33 +31,52 @@
             </div>
         </div>
         <div id="keypad">
-          <span class="column">
+          <div class="column">
             <div class="btn" id="num_btn1">1</div>
             <div class="btn" id="num_btn4">4</div>
             <div class="btn" id="num_btn7">7</div>
             <div class="btn" id="num_btn_empty_r"></div>
-          </span>
-            <span class="column">
+          </div>
+            <div class="column">
             <div class="btn" id="num_btn2">2</div>
             <div class="btn" id="num_btn5">5</div>
             <div class="btn" id="num_btn8">8</div>
             <div class="btn" id="num_btn0">0</div>
-          </span>
-            <span class="column">
+          </div>
+            <div class="column">
             <div class="btn" id="num_btn3">3</div>
             <div class="btn" id="num_btn6">6</div>
             <div class="btn" id="num_btn9">9</div>
             <div class="btn" id="num_btn_empty_l"></div>
-          </span>
-            <span class="column">
+          </div>
+            <div class="column">
             <div class="btn" id="num_btn_esc">CANCEL🚫</div>
             <div class="btn" id="num_btn_backspace">CLEAR ◀️</div>
             <div class="btn" id="num_btn_empty_long"></div>
             <div class="btn" id="num_btn_enter">ENTER ✅</div>
-          </span>
+          </div>
+        </div>
+        <div class="panel">
+            <div class="card_reader">
+                <img class="tap_to_pay" src="img/tap_to_pay.svg">
+            </div>
+            <div class="card_body">
+                <div class="card_bank">M3RHY BANK</div>
+                <img class="card_bank_logo" src="img/duck.png" alt="duck">
+                <div class="card_chip"></div>
+                <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
+                <div class="card_number">6903 1415 9265 3589</div>
+                <div class="card_type">DEBIT</div>
+                <div class="card_date">VALID<br/>THRU</div>
+                <div class="card_expiry-date">4/20</div>
+                <div class="card_owner">Jeroným Poklička</div>
+                <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
+            </div>
         </div>
     </div>
     <a id="credits" href='https://github.com/M3rhy123'>Made by M3RHY</a>
+
 </header>
+<script src="./src/App.js"></script>
 </body>
 </html>

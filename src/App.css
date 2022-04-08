@@ -80,6 +80,22 @@
     -webkit-user-select: none;
 }
 
+.page_msg_s {
+    margin-top: 10px;
+    margin-left: 150px;
+    position: absolute;
+    color: #B8B8B8;
+    background-color: #1c1d20;
+    border-radius: 10px;
+    width: 200px;
+    height: 45px;
+    padding-top: 15px;
+    font-size: 75%;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    -webkit-user-select: none;
+}
+
 #back_btn {
     float: right;
     margin-right: 5px;

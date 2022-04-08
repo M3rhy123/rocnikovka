@@ -1,0 +1,10 @@
+0 - langue choose
+1 - pin page
+2 - menu
+3 - balance
+4 - widthraw
+5 - deposit
+6 - choose value
+7 - change pin
+8 - payment
+9 - loading
