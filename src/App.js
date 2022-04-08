@@ -1,6 +1,22 @@
 import './App.css';
 import Print from './index.js'
 
+/** sound funktions*/
+const ATM_beep = () => {
+    let sound = new Audio('./public/sound/ATM_Beep.wav');
+    sound.play().catch();
+}
+
+const card_success = () => {
+    let sound = new Audio('./public/sound/card_success.wav');
+    sound.play().catch();
+}
+
+const led_on = () => {
+    let sound = new Audio('./public/sound/led_on.wav');
+    sound.play().catch();
+}
+
 let card = document.getElementById('card')
 let led = document.getElementById('led')
 let led2 = document.getElementById('led2')
@@ -42,6 +58,7 @@ const cardClick = () => {
 
         setTimeout(() => {
             led.style.backgroundColor = "#00bf16";
+            led_on();
         }, 1000);
 
         setTimeout(() => {
