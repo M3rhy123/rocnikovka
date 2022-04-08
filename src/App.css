@@ -1,39 +1,30 @@
 /*css for app.js*/
-.page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 25vh;
-    color: white;
-}
-
 .menu {
     position: relative;
 }
 
-
 .atm_btn {
-    padding-top: 5px;
+    padding-top: 8px;
     color: #B8B8B8;
     background-color: #1c1d20;
     border-radius: 10px;
-    width: 200px;
-    height: 45px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 75%;
+    width: 225px;
+    height: 55px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    font-size: 25px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     -webkit-user-select: none;
+    opacity: 0.8;
 }
 
 .atm_btn_i {
     padding-top: 5px;
-    width: 200px;
-    height: 45px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    width: 225px;
+    height: 55px;
+    margin-top: 15px;
+    margin-bottom: 35px;
 }
 
 .atm_btn_short {
@@ -42,31 +33,32 @@
     color: #B8B8B8;
     background-color: #1c1d20;
     border-radius: 10px;
-    width: 50px;
-    height: 45px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    font-size: 75%;
+    width: 65px;
+    height: 50px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-size: 25px;
     text-align: center;
     font-family: 'Oswald', sans-serif;
     -webkit-user-select: none;
+    opacity: 0.8;
 }
 
 #right {
     float: right;
-    margin-right: 10px;
+    margin-right: 15px;
     position: relative;
 }
 
 #left {
     float: left;
-    margin-left: 10px;
+    margin-left: 15px;
     position: relative;
 }
 
 .page_msg {
-    margin-top: 90px;
-    margin-left: 100px;
+    margin-top: 120px;
+    margin-left: 150px;
     position: absolute;
     color: #B8B8B8;
     background-color: #1c1d20;
@@ -74,10 +66,11 @@
     width: 300px;
     height: 100px;
     padding-top: 15px;
-    font-size: 75%;
+    font-size: 20px;
     font-family: 'Oswald', sans-serif;
     text-align: center;
     -webkit-user-select: none;
+    opacity: 0.8;
 }
 
 .page_msg_s {
@@ -94,10 +87,5 @@
     font-family: 'Oswald', sans-serif;
     text-align: center;
     -webkit-user-select: none;
-}
-
-#back_btn {
-    float: right;
-    margin-right: 5px;
-    margin-top: -2px;
+    opacity: 0.8;
 }

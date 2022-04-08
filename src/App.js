@@ -1,6 +1,12 @@
 import './App.css';
 import Print from './index.js'
 
+let card = document.getElementById('card')
+let led = document.getElementById('led')
+let led2 = document.getElementById('led2')
+let led3 = document.getElementById('led3')
+let led4 = document.getElementById('led4')
+
 /** display buttons declaration */
 let btn1 = document.getElementById('btn1')
 let btn2 = document.getElementById('btn2')
@@ -29,39 +35,86 @@ let Blc = 100;
 let pin;
 let page = 0;
 
+/** card load logic */
+const cardClick = () => {
+    if (page === 0) {
+        card.style.transform = "translateY(-180px) translateX(50px) scale(0.75)"
+
+        setTimeout(() => {
+            led.style.backgroundColor = "#00bf16";
+        }, 1000);
+
+        setTimeout(() => {
+            led2.style.backgroundColor = "#00bf16";
+        }, 1250);
+
+        setTimeout(() => {
+            led3.style.backgroundColor = "#00bf16";
+        }, 1500);
+
+        setTimeout(() => {
+            led4.style.backgroundColor = "#00bf16";
+        }, 1750);
+
+        setTimeout(() => {
+            led.style.backgroundColor = "#004708";
+            led2.style.backgroundColor = "#004708";
+            led3.style.backgroundColor = "#004708";
+            led4.style.backgroundColor = "#004708";
+            card.style.transform = "none"
+        }, 2500);
+
+        setTimeout(() => {
+            page = 10;
+            Print();
+        }, 3000);
+
+        setTimeout(() => {
+            page = 1;
+            Print();
+        }, 5000);
+    }
+}
+card.onclick = cardClick;
+
 /** pin logic*/
 const star = "*";
 
-const Pin_function =  () =>{
+const Pin_function = () => {
     document.getElementById('pin');
 }
 
-num_btn.onclick=Pin_function;
+num_btn.onclick = Pin_function;
 
 /** pages body */
 
 const App = () => {
-    switch (page){
+    switch (page) {
         case 0:
+            /** ad */
+            return (
+                <div/>
+            );
+        case 1:
             /** Langue choose */
             return (
-            <div className='menu'>
-                <div id='left'>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn'>ENG</div>
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>ENG</div>
+                    </div>
+                    <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>CZE</div>
+                    </div>
                 </div>
-                <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
-                <div id='right'>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn_i'/>
-                    <div className='atm_btn'>CZE</div>
-                </div>
-            </div>
-        );
-        case 1:
+            );
+        case 2:
             /** Pin page */
             return (
                 <div className='menu'>
@@ -69,7 +122,7 @@ const App = () => {
                     <input type="number" id='pin'/>
                 </div>
             );
-        case 2:
+        case 3:
             /** Menu */
             return (
                 <div className='menu'>
@@ -87,7 +140,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 3:
+        case 4:
             /** Balance */
             return (
                 <div className='menu'>
@@ -106,7 +159,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 4:
+        case 5:
             /** Widthraw */
             return (
                 <div className='menu'>
@@ -125,7 +178,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 5:
+        case 6:
             /** Deposit */
             return (
                 <div className='menu'>
@@ -144,7 +197,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 6:
+        case 7:
             /** Choose Value*/
             return (
                 <div className='menu'>
@@ -162,7 +215,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 7:
+        case 8:
             /** Change pin */
             return (
                 <div className='menu'>
@@ -180,7 +233,7 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 8:
+        case 9:
             /** Payment */
             return (
                 <div className='menu'>
@@ -198,9 +251,9 @@ const App = () => {
                     </div>
                 </div>
             );
-        case 9:
+        case 10:
             /** Loading */
-            return(
+            return (
                 <div className='menu'>
                     <div id='left'>
                         <div className='atm_btn_i'/>
@@ -217,6 +270,44 @@ const App = () => {
                     </div>
                 </div>
             );
+        case 11:
+            /** Transaction Complete */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Transaction complete</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
+        case 12:
+            /** Thanks */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Thanks for you</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
     }
 }
 
@@ -224,18 +315,18 @@ const App = () => {
 /** buttons logic */
 const bnt1_click = () => {
     switch (page) {
-        case 2:
+        case 3:
             setTimeout(() => {
-                page = 3;
+                page = 4;
                 Print();
-                }, 1000);
-            page = 9;
+            }, 1000);
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 1;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 1;
             break;
     }
@@ -244,18 +335,18 @@ btn1.onclick = bnt1_click;
 
 const bnt2_click = () => {
     switch (page) {
-        case 2:
+        case 3:
             setTimeout(() => {
-                page = 4;
+                page = 5;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 2;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 2;
             break;
     }
@@ -264,18 +355,18 @@ btn2.onclick = bnt2_click;
 
 const bnt3_click = () => {
     switch (page) {
-        case 2:
+        case 3:
             setTimeout(() => {
-                page = 5;
+                page = 6;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 5;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 5;
             break;
     }
@@ -284,19 +375,19 @@ btn3.onclick = bnt3_click;
 
 const bnt4_click = () => {
     switch (page) {
-        case 0:
+        case 1:
             //lang = "eng"
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 10;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 10;
             break;
     }
@@ -305,18 +396,18 @@ btn4.onclick = bnt4_click;
 
 const bnt5_click = () => {
     switch (page) {
-        case 2:
+        case 3:
             setTimeout(() => {
-                page = 7;
+                page = 8;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 20;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 20;
             break;
     }
@@ -325,18 +416,18 @@ btn5.onclick = bnt5_click;
 
 const bnt6_click = () => {
     switch (page) {
-        case 2:
+        case 3:
             setTimeout(() => {
-                page = 8;
+                page = 9;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 4:
+        case 5:
             Blc = Blc - 50;
             break;
-        case 5:
+        case 6:
             Blc = Blc + 50;
             break;
     }
@@ -345,16 +436,21 @@ btn6.onclick = bnt6_click;
 
 const bnt7_click = () => {
     switch (page) {
-        case 4:
+        case 5:
             setTimeout(() => {
-                page = 6;
+                page = 7;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
-        case 5:
-            page = 6;
+        case 6:
+            setTimeout(() => {
+                page = 7;
+                Print();
+            }, 1000);
+            page = 10;
+            Print();
             break;
     }
 }
@@ -362,75 +458,84 @@ btn7.onclick = bnt7_click;
 
 const bnt8_click = () => {
     switch (page) {
-        case 0:
+        case 1:
             //lang = "cs";
             setTimeout(() => {
-                page = 1;
+                page = 2;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 2:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
-            Print();
-            break;
-        case 3:
-            setTimeout(() => {
-                page = 2;
-                Print();
-            }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 4:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 5:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 6:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 7:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
             Print();
             break;
         case 8:
             setTimeout(() => {
-                page = 2;
+                page = 3;
                 Print();
             }, 1000);
-            page = 9;
+            page = 10;
+            Print();
+            break;
+        case 9:
+            setTimeout(() => {
+                page = 3;
+                Print();
+            }, 1000);
+            page = 10;
             Print();
             break;
     }
 }
 btn8.onclick = bnt8_click;
 
+/** numpad logic */
+const btnEscClick = () => {
+    setTimeout(() => {
+        page = 0;
+        Print();
+    }, 500);
+}
+
+num_btn_esc.onclick = btnEscClick;
 
 
 export default App;

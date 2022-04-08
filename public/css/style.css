@@ -17,8 +17,8 @@
 }
 
 #atm_body {
-    width: 700px;
-    height: 650px;
+    width: 875px;
+    height: 800px;
     background-color: #373c46;
     padding: 25px;
     border-radius: 5px;
@@ -27,13 +27,13 @@
 /*display and buttons*/
 #atm_upper {
     width: auto;
-    height: 300px;
+    height: 375px;
     position: relative;
 }
 
 .btn {
     box-sizing: border-box;
-    padding-top: 15px;
+    padding-top: 20px;
     text-align: center;
     appearance: none;
     background-color: #B8B8B8;
@@ -43,14 +43,14 @@
     color: #36395A;
     cursor: pointer;
     font-family: "JetBrains Mono", monospace;
-    height: 50px;
-    width: 50px;
+    height: 62px;
+    width: 62px;
     justify-content: center;
     line-height: 1;
     list-style: none;
     overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
     position: relative;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
@@ -59,39 +59,39 @@
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 5px;
     margin-left: 5px;
 }
 
 #buttons_right {
     position: relative;
-    margin-top: 10px;
+    margin-top: 12px;
     float: right;
 }
 
 #buttons_left {
     position: relative;
-    margin-top: 10px;
+    margin-top: 12px;
     float: left;
 }
 
 #display {
-    height: 300px;
-    width: 500px;
-    background-color: #5a5e93;
+    height: 375px;
+    width: 625px;
+    background-image: url("../img/banking.jpg");
+    background-size: cover;
     position: relative;
-    margin-left: 20px;
+    margin-left: 40px;
     margin-right: 20px;
-    border: #303236 5px solid;
+    border: #303236 7px solid;
     float: left;
 }
 
 /*numerical keyboard*/
 #keypad {
-
     margin-top: 25px;
-    margin-left: 5px;
+    margin-left: 25px;
     padding: 20px;
     position: absolute;
     background-color: #1c1d20;
@@ -100,11 +100,11 @@
 }
 
 #num_btn_esc, #num_btn_backspace, #num_btn_empty_long, #num_btn_enter {
-    width: 115px;
+    width: 144px;
 }
 
 #num_btn3, #num_btn6, #num_btn9, #num_btn_empty_l {
-    margin-right: 50px;
+    margin-right: 62px;
 }
 
 .column {
@@ -112,7 +112,7 @@
 }
 
 #btn1, #btn2, #btn3, #btn5, #btn6, #btn7 {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 /*button press animation*/
@@ -123,27 +123,55 @@
 
 /*panel with credit card, card reader*/
 .panel{
-    width: 200px;
+    width: 250px;
     float: right;
-}
-
-.tap_to_pay{
-    width: 100px;
-    height: 60px;
-    position: relative;
-    left: 20px;
-    top: 10px;
 }
 
 .card_reader{
-    margin-top: 25px;
-    margin-right: 35px;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    margin-right: 40px;
     border-radius: 5px ;
     border: 0.5rem outset #282c34;
-    width: 150px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
     float: right;
     background-color: #1c1d20;
+}
+
+.tap_to_pay{
+    width: 125px;
+    position: absolute;
+    -webkit-user-select: none;
+    left: 37px;
+    top: 15px;
+}
+
+.led {
+    width: 10px;
+    height: 10px;
+    background-color: #004708;
+    border-radius: 100%;
+    position: absolute;
+    bottom: 10px;
+
+}
+
+#led{
+    left: 50px;
+}
+
+#led2{
+    left: 70px;
+}
+
+#led3{
+    left: 90px;
+}
+
+#led4{
+    left: 110px;
 }
 
 .card_body {
@@ -157,19 +185,14 @@
     height: 140px;
     text-align: left;
     padding: 10px;
-    margin: 25px 10px 25px 0;
+    margin: 25px 40px 0 0;
     border-radius: 10px;
     border: 1px solid #000000;
     box-sizing: border-box;
-    background-image: url("../img/world_map.jpg");
+    background-image: url("../img/card_background.jpg");
     background-size: cover;
     float: right;
     transition: transform 1s;
-
-}
-
-.card_body:active {
-    transform: translateY(-150px) translateX(80px);
 }
 
 .card_bank{
