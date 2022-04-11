@@ -14,6 +14,10 @@
 <body>
 <header class="header">
     <div id="atm_body">
+        <div class="atm_name">
+            <a  href='https://github.com/M3rhy123'><img class="bank_logo" src="img/duck.png" alt="bank logo"></a>
+            <a class="name">M3RHY-bank CONTACTLESS ATM 5000</a>
+        </div>
         <div id="atm_upper">
             <div id="buttons_left">
                 <div class="btn" id="btn1">►</div>
@@ -22,7 +26,6 @@
                 <div class="btn" id="btn4">►</div>
             </div>
             <div id="display">
-
             </div>
             <div id="buttons_right">
                 <div class="btn" id="btn5">◄</div>
@@ -32,30 +35,40 @@
             </div>
         </div>
         <div id="keypad">
-          <div class="column">
-            <div class="btn" id="num_btn1">1</div>
-            <div class="btn" id="num_btn4">4</div>
-            <div class="btn" id="num_btn7">7</div>
-            <div class="btn" id="num_btn_empty_r"></div>
-          </div>
             <div class="column">
-            <div class="btn" id="num_btn2">2</div>
-            <div class="btn" id="num_btn5">5</div>
-            <div class="btn" id="num_btn8">8</div>
-            <div class="btn" id="num_btn0">0</div>
-          </div>
+                <div class="btn" id="num_btn1">1</div>
+                <div class="btn" id="num_btn4">4</div>
+                <div class="btn" id="num_btn7">7</div>
+                <div class="btn" id="num_btn_empty_r"></div>
+            </div>
             <div class="column">
-            <div class="btn" id="num_btn3">3</div>
-            <div class="btn" id="num_btn6">6</div>
-            <div class="btn" id="num_btn9">9</div>
-            <div class="btn" id="num_btn_empty_l"></div>
-          </div>
+                <div class="btn" id="num_btn2">2</div>
+                <div class="btn" id="num_btn5">5</div>
+                <div class="btn" id="num_btn8">8</div>
+                <div class="btn" id="num_btn0">0</div>
+            </div>
             <div class="column">
-            <div class="btn" id="num_btn_esc">CANCEL🚫</div>
-            <div class="btn" id="num_btn_backspace">CLEAR ◀️</div>
-            <div class="btn" id="num_btn_empty_long"></div>
-            <div class="btn" id="num_btn_enter">ENTER ✅</div>
-          </div>
+                <div class="btn" id="num_btn3">3</div>
+                <div class="btn" id="num_btn6">6</div>
+                <div class="btn" id="num_btn9">9</div>
+                <div class="btn" id="num_btn_empty_l"></div>
+            </div>
+            <div class="column">
+                <div class="btn" id="num_btn_esc">CANCEL🚫</div>
+                <div class="btn" id="num_btn_backspace">CLEAR ◀️</div>
+                <div class="btn" id="num_btn_empty_long"></div>
+                <div class="btn" id="num_btn_enter">ENTER ✅</div>
+            </div>
+        </div>
+        <div class="money_slot">
+            <div class="slot">
+            <div class="door"></div>
+                <div id="money5"></div>
+                <div id="money4"></div>
+                <div id="money3"></div>
+                <div id="money2"></div>
+                <div id="money"></div>
+            </div>
         </div>
         <div class="panel">
             <div class="card_reader">
@@ -74,12 +87,23 @@
                 <div class="card_type">DEBIT</div>
                 <div class="card_date">VALID<br/>THRU</div>
                 <div class="card_expiry-date">7/25</div>
-                <div class="card_owner">Marek Prokop Pekáč</div>
+                <div class="card_owner">Josef Prokop Pekáč</div>
+                <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
+            </div>
+            <div class="card_body" id="card2">
+                <div class="card2_bank">M3RHY BANK</div>
+                <img class="card2_bank_logo" src="img/duck.png" alt="bank logo">
+                <div class="card_chip"></div>
+                <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
+                <div class="card_number">4202 7182 8182 8459</div>
+                <div class="card_type">DEBIT</div>
+                <div class="card_date">VALID<br/>THRU</div>
+                <div class="card_expiry-date">1/23</div>
+                <div class="card_owner">Karel Utrhpárek</div>
                 <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
             </div>
         </div>
     </div>
-    <a id="credits" href='https://github.com/M3rhy123'>Made by M3RHY</a>
 
 </header>
 <script src="./src/App.js"></script>

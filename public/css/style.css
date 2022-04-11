@@ -18,10 +18,37 @@
 
 #atm_body {
     width: 875px;
-    height: 800px;
+    height: 950px;
     background-color: #373c46;
     padding: 25px;
     border-radius: 5px;
+}
+
+/*bank name*/
+.atm_name{
+    width: 350px;
+    height: 50px;
+    position: relative;
+    padding-left: 5px;
+    margin: -10px 0 10px 225px ;
+    background-color: #333333;
+    border: 3px #282c34 solid;
+    border-radius: 5px;
+}
+
+.bank_logo {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.name {
+    font-size: 20px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    color: teal;
 }
 
 /*display and buttons*/
@@ -84,19 +111,74 @@
     position: relative;
     margin-left: 40px;
     margin-right: 20px;
-    border: #303236 7px solid;
+    border: #303236 7px inset;
     float: left;
 }
 
 /*numerical keyboard*/
 #keypad {
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 25px;
     padding: 20px;
     position: absolute;
-    background-color: #1c1d20;
+    background: repeating-linear-gradient(
+            -55deg,
+            #222,
+            #222 10px,
+            #1c1d20 10px,
+            #1c1d20 20px
+    );
     border: 10px #282c34 solid;
     border-radius: 10px;
+}
+
+.money_slot {
+    margin-top: 370px;
+    margin-left: 25px;
+    width: 472px;
+    height: 100px;
+    position: absolute;
+    background: repeating-linear-gradient(
+            -55deg,
+            #222,
+            #222 10px,
+            #1c1d20 10px,
+            #1c1d20 20px
+    );
+    border: 10px #282c34 solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slot{
+    width: 420px;
+    height: 50px;
+    background-color: #1f1f1f;
+}
+
+.door{
+    width: 420px;
+    height: 50px;
+    background: repeating-linear-gradient(
+            0deg,
+            #333 1px,
+            #B8B8B8 3px
+    );
+    border: 5px outset #282c34;
+}
+
+.door:hover{
+    animation-name: example;
+    animation-duration: 4s;
+}
+
+@keyframes example {
+    0%{height: 50px}
+    50%{height: 6px}
+    100%{height: 50px}
 }
 
 #num_btn_esc, #num_btn_backspace, #num_btn_empty_long, #num_btn_enter {
@@ -122,30 +204,37 @@
 }
 
 /*panel with credit card, card reader*/
-.panel{
+.panel {
     width: 250px;
     float: right;
 }
 
-.card_reader{
+.card_reader {
     position: relative;
-    display: inline-block;
-    margin-top: 30px;
+    margin-top: 15px;
     margin-right: 40px;
-    border-radius: 5px ;
+    border-radius: 5px;
     border: 0.5rem outset #282c34;
     width: 200px;
     height: 150px;
     float: right;
-    background-color: #1c1d20;
+    background: repeating-linear-gradient(
+            -55deg,
+            #222,
+            #222 10px,
+            #1c1d20 10px,
+            #1c1d20 20px
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.tap_to_pay{
+.tap_to_pay {
     width: 125px;
     position: absolute;
     -webkit-user-select: none;
-    left: 37px;
-    top: 15px;
 }
 
 .led {
@@ -158,20 +247,25 @@
 
 }
 
-#led{
+#led {
     left: 50px;
 }
 
-#led2{
+#led2 {
     left: 70px;
 }
 
-#led3{
+#led3 {
     left: 90px;
 }
 
-#led4{
+#led4 {
     left: 110px;
+}
+
+.cards {
+    width: 200px;
+    float: right;
 }
 
 .card_body {
@@ -185,17 +279,24 @@
     height: 140px;
     text-align: left;
     padding: 10px;
-    margin: 25px 40px 0 0;
+    margin: 15px 40px 0 0;
     border-radius: 10px;
     border: 1px solid #000000;
     box-sizing: border-box;
-    background-image: url("../img/card_background.jpg");
     background-size: cover;
     float: right;
     transition: transform 1s;
 }
 
-.card_bank{
+#card {
+    background-image: url("../img/card_background.jpg");
+}
+
+#card2 {
+    background-image: url("../img/card2_background.jpg");
+}
+
+.card_bank {
     position: absolute;
     color: #1e5989;
     font-family: 'Shadows Into Light', cursive;
@@ -204,12 +305,29 @@
     left: 25px;
 }
 
-.card_bank_logo{
+.card2_bank {
+    position: absolute;
+    color: #236700;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    top: 3px;
+    left: 25px;
+}
+
+.card_bank_logo {
     width: 12px;
     height: 12px;
     position: absolute;
     top: 5px;
     filter: sepia(100%) hue-rotate(165deg) saturate(300%);
+}
+
+.card2_bank_logo {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 5px;
+    filter: sepia(100%) hue-rotate(50deg) saturate(450%);
 }
 
 .card_chip {
@@ -223,7 +341,7 @@
     left: 20px;
 }
 
-.card_nfc{
+.card_nfc {
     height: 20px;
     width: 20px;
     position: absolute;
@@ -244,7 +362,7 @@
 
 }
 
-.card_type{
+.card_type {
     font-size: 7px;
     position: absolute;
     bottom: 38px;
@@ -252,7 +370,7 @@
     color: black;
 }
 
-.card_date{
+.card_date {
     font-size: 4px;
     line-height: 5px;
     position: absolute;
@@ -291,7 +409,7 @@
 #credits {
     color: black;
     margin-top: 50px;
-    background-color: #1c1d20;
+    background-color: #333333;
     padding: 5px;
     border: 5px solid #000000;
     border-radius: 10px;
@@ -299,8 +417,4 @@
     transition: 0.3s;
     font-family: 'Oswald', sans-serif;
     position: relative;
-}
-
-#credits:hover {
-    background-color: #131316;
 }

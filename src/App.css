@@ -16,7 +16,7 @@
     text-align: center;
     font-family: 'Oswald', sans-serif;
     -webkit-user-select: none;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .atm_btn_i {
@@ -41,7 +41,7 @@
     text-align: center;
     font-family: 'Oswald', sans-serif;
     -webkit-user-select: none;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 #right {
@@ -70,7 +70,7 @@
     font-family: 'Oswald', sans-serif;
     text-align: center;
     -webkit-user-select: none;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 
 .page_msg_s {
@@ -87,5 +87,9 @@
     font-family: 'Oswald', sans-serif;
     text-align: center;
     -webkit-user-select: none;
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+.sucess_msg{
+    font-size: 15px;
 }

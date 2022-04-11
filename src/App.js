@@ -18,6 +18,7 @@ const led_on = () => {
 }
 
 let card = document.getElementById('card')
+let card2 = document.getElementById('card2')
 let led = document.getElementById('led')
 let led2 = document.getElementById('led2')
 let led3 = document.getElementById('led3')
@@ -53,8 +54,9 @@ let page = 0;
 
 /** card load logic */
 const cardClick = () => {
+    console.log("smrdíš")
     if (page === 0) {
-        card.style.transform = "translateY(-180px) translateX(50px) scale(0.75)"
+        card.style.transform = "translateY(-170px) translateX(50px) scale(0.75)"
 
         setTimeout(() => {
             led.style.backgroundColor = "#00bf16";
@@ -94,8 +96,51 @@ const cardClick = () => {
 }
 card.onclick = cardClick;
 
+const card2Click = () => {
+    console.log("smrdíš")
+    if (page === 0) {
+        card2.style.transform = "translateY(-330px) translateX(50px) scale(0.75)"
+
+        setTimeout(() => {
+            led.style.backgroundColor = "#00bf16";
+            led_on();
+        }, 1000);
+
+        setTimeout(() => {
+            led2.style.backgroundColor = "#00bf16";
+        }, 1250);
+
+        setTimeout(() => {
+            led3.style.backgroundColor = "#00bf16";
+        }, 1500);
+
+        setTimeout(() => {
+            led4.style.backgroundColor = "#00bf16";
+        }, 1750);
+
+        setTimeout(() => {
+            led.style.backgroundColor = "#004708";
+            led2.style.backgroundColor = "#004708";
+            led3.style.backgroundColor = "#004708";
+            led4.style.backgroundColor = "#004708";
+            card2.style.transform = "none"
+        }, 2500);
+
+        setTimeout(() => {
+            page = 10;
+            Print();
+        }, 3000);
+
+        setTimeout(() => {
+            page = 1;
+            Print();
+        }, 5000);
+    }
+}
+card2.onclick = card2Click;
+
 /** pin logic*/
-const star = "*";
+//const star = "*";
 
 const Pin_function = () => {
     document.getElementById('pin');
@@ -316,7 +361,8 @@ const App = () => {
                         <div className='atm_btn_i'/>
                         <div className='atm_btn_i'/>
                     </div>
-                    <div className='page_msg'>Thanks for you</div>
+                    <div className='page_msg'>THANKS FOR YOUR VISIT ❤️<br/><a className='sucess_msg'>**SYSTEM FAILED
+                        SUCESFULLY**</a></div>
                     <div id='right'>
                         <div className='atm_btn_i'/>
                         <div className='atm_btn_i'/>
@@ -546,10 +592,18 @@ btn8.onclick = bnt8_click;
 
 /** numpad logic */
 const btnEscClick = () => {
-    setTimeout(() => {
-        page = 0;
+    if (page !== 0) {
+        page = 10;
         Print();
-    }, 500);
+        setTimeout(() => {
+            page = 12;
+            Print();
+        }, 500);
+        setTimeout(() => {
+            page = 0;
+            Print();
+        }, 3000);
+    }
 }
 
 num_btn_esc.onclick = btnEscClick;
