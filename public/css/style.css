@@ -25,12 +25,12 @@
 }
 
 /*bank name*/
-.atm_name{
+.atm_name {
     width: 350px;
     height: 50px;
     position: relative;
     padding-left: 5px;
-    margin: -10px 0 10px 225px ;
+    margin: -10px 0 10px 225px;
     background-color: #333333;
     border: 3px #282c34 solid;
     border-radius: 5px;
@@ -63,7 +63,6 @@
     padding-top: 20px;
     text-align: center;
     appearance: none;
-    background-color: #B8B8B8;
     border-radius: 4px;
     border-width: 0;
     box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #8a8a8f 0 -3px 0 inset;
@@ -89,6 +88,13 @@
     font-size: 20px;
     margin-bottom: 5px;
     margin-left: 5px;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+    linear-gradient(180deg, hsl(0, 0%, 78%) 0%,
+            hsl(0, 0%, 90%) 47%,
+            hsl(0, 0%, 78%) 53%,
+            hsl(0, 0%, 70%) 100%);
 }
 
 #buttons_right {
@@ -106,13 +112,13 @@
 #display {
     height: 375px;
     width: 625px;
-    background-image: url("../img/banking.jpg");
-    background-size: cover;
     position: relative;
     margin-left: 40px;
     margin-right: 20px;
     border: #303236 7px inset;
     float: left;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
 }
 
 /*numerical keyboard*/
@@ -153,32 +159,77 @@
     justify-content: center;
 }
 
-.slot{
+.slot {
     width: 420px;
     height: 50px;
     background-color: #1f1f1f;
 }
 
-.door{
+.door {
+    position: absolute;
     width: 420px;
     height: 50px;
-    background: repeating-linear-gradient(
-            0deg,
-            #333 1px,
-            #B8B8B8 3px
-    );
-    border: 5px outset #282c34;
+    background-color: hsl(0, 0%, 90%);
+    box-shadow: inset hsla(0, 0%, 15%, 1) 0 0 0 1px, /* border */ inset hsla(0, 0%, 15%, .8) 0 -1px 5px 4px, /* soft SD */ inset hsla(0, 0%, 0%, .25) 0 -1px 0 7px, /* bottom SD */ inset hsla(0, 0%, 100%, .7) 0 2px 1px 7px; /* top HL */
+
+    transition: color .2s;
+    background-image: -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 6%, hsla(0, 0%, 100%, .1) 7.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0) 4%, hsla(0, 0%, 0%, .03) 4.5%),
+    -webkit-repeating-linear-gradient(left, hsla(0, 0%, 100%, 0) 0%, hsla(0, 0%, 100%, 0) 1.2%, hsla(0, 0%, 100%, .15) 2.2%),
+    linear-gradient(180deg, hsl(0, 0%, 78%) 0%,
+            hsl(0, 0%, 90%) 47%,
+            hsl(0, 0%, 78%) 53%,
+            hsl(0, 0%, 70%) 100%);
 }
 
-.door:hover{
+.door:hover {
     animation-name: example;
     animation-duration: 4s;
 }
 
+.moeny{
+    transform: rotate(180deg);
+}
+
+#money, #money2, #money3, #money4, #money5 {
+    background-color: #118c4f;
+    background-image: linear-gradient(0deg, #072e1b 10%, #0b4a2b 74%);
+    border: #000 solid 1px;
+    position: absolute;
+    width: 350px;
+    bottom: 5px;
+    left: 35px;
+    height: 25px;
+    transform: skew(135deg);
+}
+
+#money2 {
+    bottom: 10px;
+}
+
+#money3 {
+    bottom: 15px;
+
+}
+
+#money4 {
+    bottom: 20px;
+}
+
+#money5 {
+    bottom: 25px;
+}
+
 @keyframes example {
-    0%{height: 50px}
-    50%{height: 6px}
-    100%{height: 50px}
+    0% {
+        height: 50px
+    }
+    50% {
+        height: 6px
+    }
+    100% {
+        height: 50px
+    }
 }
 
 #num_btn_esc, #num_btn_backspace, #num_btn_empty_long, #num_btn_enter {

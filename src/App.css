@@ -6,7 +6,7 @@
 .atm_btn {
     padding-top: 8px;
     color: #B8B8B8;
-    background-color: #1c1d20;
+    background-color: #333;
     border-radius: 10px;
     width: 225px;
     height: 55px;
@@ -31,7 +31,7 @@
     position: relative;
     padding-top: 5px;
     color: #B8B8B8;
-    background-color: #1c1d20;
+    background-color: #333;
     border-radius: 10px;
     width: 65px;
     height: 50px;
@@ -61,7 +61,7 @@
     margin-left: 150px;
     position: absolute;
     color: #B8B8B8;
-    background-color: #1c1d20;
+    background-color: #333;
     border-radius: 10px;
     width: 300px;
     height: 100px;
@@ -71,6 +71,7 @@
     text-align: center;
     -webkit-user-select: none;
     opacity: 0.9;
+
 }
 
 .page_msg_s {
@@ -78,7 +79,7 @@
     margin-left: 150px;
     position: absolute;
     color: #B8B8B8;
-    background-color: #1c1d20;
+    background-color: #333;
     border-radius: 10px;
     width: 200px;
     height: 45px;
@@ -88,6 +89,38 @@
     text-align: center;
     -webkit-user-select: none;
     opacity: 0.9;
+}
+
+.long{
+    height: 200px;
+}
+
+.pin{
+    background-color: #1c1d20;
+    color: #B8B8B8;
+    font-size: 250%;
+    border: black 2px solid;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    top: 175px;
+    left: 175px;
+    -webkit-user-select: none;
+    padding: 0 15px 0 15px;
+    text-align: center;
+}
+
+#wrong{
+    position: absolute;
+    display: none;
+    left: 225px;
+    top: 200px;
+    color: #ff0000;
+    font-size: 100%;
+}
+
+.pin_value{
+    display: none;
 }
 
 .sucess_msg{

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://pattern.kivan-works.com/fonts/kredit.css">
     <link rel="shortcut icon" href="img/atm.ico">
     <link rel="stylesheet" href="css/style.css">
-    <title>ATM simulator</title>
+    <title>M3RHY's ATM</title>
 </head>
 <body>
 <header class="header">
     <div id="atm_body">
         <div class="atm_name">
-            <a  href='https://github.com/M3rhy123'><img class="bank_logo" src="img/duck.png" alt="bank logo"></a>
-            <a class="name">M3RHY-bank CONTACTLESS ATM 5000</a>
+            <a href='https://github.com/M3rhy123'><img class="bank_logo" src="img/duck.png" alt="bank logo"></a>
+            <a class="name">M3RHY's BANK CONTACTLESS ATM</a>
         </div>
         <div id="atm_upper">
             <div id="buttons_left">
@@ -54,7 +54,7 @@
                 <div class="btn" id="num_btn_empty_l"></div>
             </div>
             <div class="column">
-                <div class="btn" id="num_btn_esc">CANCEL🚫</div>
+                <div class="btn" id="num_btn_esc">CANCEL 🚫</div>
                 <div class="btn" id="num_btn_backspace">CLEAR ◀️</div>
                 <div class="btn" id="num_btn_empty_long"></div>
                 <div class="btn" id="num_btn_enter">ENTER ✅</div>
@@ -62,50 +62,63 @@
         </div>
         <div class="money_slot">
             <div class="slot">
-            <div class="door"></div>
-                <div id="money5"></div>
-                <div id="money4"></div>
-                <div id="money3"></div>
-                <div id="money2"></div>
-                <div id="money"></div>
+                <div class="moeny">
+                    <div id="money5">
+                        <div class="round"></div>
+                    </div>
+                    <div id="money4"></div>
+                    <div id="money3"></div>
+                    <div id="money2"></div>
+                    <div id="money"></div>
+                </div>
+                <div class="door"></div>
             </div>
         </div>
-        <div class="panel">
-            <div class="card_reader">
-                <img class="tap_to_pay" src="img/tap_to_pay.svg" alt="card here">
-                <div class="led" id="led"></div>
-                <div class="led" id="led2"></div>
-                <div class="led" id="led3"></div>
-                <div class="led" id="led4"></div>
-            </div>
-            <div class="card_body" id="card">
-                <div class="card_bank">M3RHY BANK</div>
-                <img class="card_bank_logo" src="img/duck.png" alt="bank logo">
-                <div class="card_chip"></div>
-                <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
-                <div class="card_number">6903 1415 9265 3589</div>
-                <div class="card_type">DEBIT</div>
-                <div class="card_date">VALID<br/>THRU</div>
-                <div class="card_expiry-date">7/25</div>
-                <div class="card_owner">Josef Prokop Pekáč</div>
-                <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
-            </div>
-            <div class="card_body" id="card2">
-                <div class="card2_bank">M3RHY BANK</div>
-                <img class="card2_bank_logo" src="img/duck.png" alt="bank logo">
-                <div class="card_chip"></div>
-                <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
-                <div class="card_number">4202 7182 8182 8459</div>
-                <div class="card_type">DEBIT</div>
-                <div class="card_date">VALID<br/>THRU</div>
-                <div class="card_expiry-date">1/23</div>
-                <div class="card_owner">Karel Utrhpárek</div>
-                <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
-            </div>
+            <div class="panel">
+                <div class="card_reader">
+                    <img class="tap_to_pay" src="img/tap_to_pay.svg" alt="card here">
+                    <div class="led" id="led"></div>
+                    <div class="led" id="led2"></div>
+                    <div class="led" id="led3"></div>
+                    <div class="led" id="led4"></div>
+                </div>
+                <div class="card_body" id="card">
+                    <div class="card_bank">M3RHY's BANK</div>
+                    <img class="card_bank_logo" src="img/duck.png" alt="bank logo">
+                    <div class="card_chip"></div>
+                    <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
+                    <div class="card_number">6903 1415 9265 3589</div>
+                    <div class="card_type">DEBIT</div>
+                    <div class="card_date">VALID<br/>THRU</div>
+                    <div class="card_expiry-date">7/25</div>
+                    <div class="card_owner">Josef Prokop Pekáč</div>
+                    <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
+                </div>
+                <div class="card_body" id="card2">
+                    <div class="card2_bank">M3RHY's BANK</div>
+                    <img class="card2_bank_logo" src="img/duck.png" alt="bank logo">
+                    <div class="card_chip"></div>
+                    <img class="card_nfc" src="img/nfc.png" alt="nfc logo">
+                    <div class="card_number">4202 7182 8182 8459</div>
+                    <div class="card_type">DEBIT</div>
+                    <div class="card_date">VALID<br/>THRU</div>
+                    <div class="card_expiry-date">1/23</div>
+                    <div class="card_owner">Karel Utrhpárek</div>
+                    <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo">
+                </div>
         </div>
-    </div>
+        <audio id="sound1">
+            <source src="sound/ATM_Beep.wav" type="audio/wav">
+        </audio>
+        <audio id="sound2">
+            <source src="sound/card_success.wav" type="audio/wav">
+        </audio>
+        <audio id="sound3">
+            <source src="sound/led_on.wav" type="audio/wav">
+        </audio>
 
 </header>
 <script src="./src/App.js"></script>
+<script src="./src/App_btns.js"></script>
 </body>
 </html>
