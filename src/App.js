@@ -20,10 +20,24 @@ let page = 0;
 let sound1 = document.getElementById('sound1')
 let sound2 = document.getElementById('sound2')
 let sound3 = document.getElementById('sound3')
+let sound4 = document.getElementById('sound4')
+let sound5 = document.getElementById('sound5')
 
 const beep_sound = () => {
     setTimeout(() => {
         sound1.play();
+    }, 1);
+}
+
+const AcessX = () => {
+    setTimeout(() => {
+        sound4.play();
+    }, 1);
+}
+
+const AcessOK = () => {
+    setTimeout(() => {
+        sound5.play();
     }, 1);
 }
 
@@ -55,43 +69,34 @@ let num_btn_enter = document.getElementById('num_btn_enter')
 
 /** pin logic*/
 /*const star = "*";
-
 const Pin_function = () => {
     document.getElementById('pin');;/*
 }
-
 num_btn.onclick = Pin_function;
-
 /** pages body */
 
 /** card load logic */
-const leds_on = () => {
-    setTimeout(() => {
-        led.style.backgroundColor = "#00bf16";
-        sound3.play();
-    }, 1000);
-
-    setTimeout(() => {
-        led2.style.backgroundColor = "#00bf16";
-        sound3.play();
-    }, 1250);
-
-    setTimeout(() => {
-        led3.style.backgroundColor = "#00bf16";
-        sound3.play();
-    }, 1500);
-
-    setTimeout(() => {
-        led4.style.backgroundColor = "#00bf16";
-        sound3.play();
-    }, 1750);
-}
-
 const cardClick = () => {
     usedCard = 1;
     if (page === 0) {
         card.style.transform = "translateY(-170px) translateX(50px) scale(0.75)"
-        leds_on();
+        setTimeout(() => {
+            led.style.backgroundColor = "#00bf16";
+            sound2.play();
+        }, 1000);
+
+        setTimeout(() => {
+            led2.style.backgroundColor = "#00bf16";
+        }, 1100);
+
+        setTimeout(() => {
+            led3.style.backgroundColor = "#00bf16";
+        }, 1200);
+
+        setTimeout(() => {
+            led4.style.backgroundColor = "#00bf16";
+        }, 1300);
+
         setTimeout(() => {
             led.style.backgroundColor = "#004708";
             led2.style.backgroundColor = "#004708";
@@ -99,17 +104,17 @@ const cardClick = () => {
             led4.style.backgroundColor = "#004708";
             sound2.play();
             card.style.transform = "none"
-        }, 2500);
+        }, 1600);
 
         setTimeout(() => {
             page = 10;
             Print();
-        }, 3000);
+        }, 2000);
 
         setTimeout(() => {
             page = 1;
             Print();
-        }, 5000);
+        }, 3000);
     }
 }
 card.onclick = cardClick;
@@ -117,8 +122,24 @@ card.onclick = cardClick;
 const card2Click = () => {
     usedCard = 2;
     if (page === 0) {
-        card2.style.transform = "translateY(-330px) translateX(50px) scale(0.75)"
-        leds_on();
+        card2.style.transform = "translateY(-320px) translateX(50px) scale(0.75)"
+        setTimeout(() => {
+            led.style.backgroundColor = "#00bf16";
+            sound2.play();
+        }, 1000);
+
+        setTimeout(() => {
+            led2.style.backgroundColor = "#00bf16";
+        }, 1100);
+
+        setTimeout(() => {
+            led3.style.backgroundColor = "#00bf16";
+        }, 1200);
+
+        setTimeout(() => {
+            led4.style.backgroundColor = "#00bf16";
+        }, 1300);
+
         setTimeout(() => {
             led.style.backgroundColor = "#004708";
             led2.style.backgroundColor = "#004708";
@@ -126,17 +147,17 @@ const card2Click = () => {
             led4.style.backgroundColor = "#004708";
             sound2.play();
             card2.style.transform = "none"
-        }, 2500);
+        }, 1600);
 
         setTimeout(() => {
             page = 10;
             Print();
-        }, 3000);
+        }, 2000);
 
         setTimeout(() => {
             page = 1;
             Print();
-        }, 5000);
+        }, 3000);
     }
 }
 card2.onclick = card2Click;
@@ -624,9 +645,11 @@ const btnEnterClick = () => {
     switch (page) {
         case 2:
             if (usedCard === 1) {
+                console.log(pin_num.innerText)
                 if (pin_num.value === pin1) {
                     pin.innerHTML = '';
                     pin_num.value = '';
+                    AcessOK();
                     setTimeout(() => {
                         page = 10;
                         Print();
@@ -636,17 +659,20 @@ const btnEnterClick = () => {
                         Print();
                     }, 1000);
                 } else {
+
                     pin.innerHTML = '';
                     pin_num.value = '';
                     wrong.style.display = "block";
+                    AcessX();
                     setTimeout(() => {
                         wrong.style.display = "none";
-                    }, 2000);
+                    }, 2500);
                 }
             } else {
                 if (pin_num.value === pin2) {
                     pin.innerHTML = '';
                     pin_num.value = '';
+                    AcessOK();
                     setTimeout(() => {
                         page = 10;
                         Print();
@@ -659,276 +685,276 @@ const btnEnterClick = () => {
                     pin.innerHTML = '';
                     pin_num.value = '';
                     wrong.style.display = "block";
+                    AcessX();
                     setTimeout(() => {
                         wrong.style.display = "none";
-                    }, 2000);
+                    }, 2500);
                 }
 
             }
     }
 }
 
-    num_btn_enter.onclick = btnEnterClick;
+num_btn_enter.onclick = btnEnterClick;
 
-    const bntBackClick = () => {
-        beep_sound();
-        let pin = document.getElementById('pin');
-        switch (page) {
-            case 2:
-                pin.innerText = pin.innerText.slice(0, -1);
-        }
+const bntBackClick = () => {
+    beep_sound();
+    let pin = document.getElementById('pin');
+    let pin_num = document.getElementById('pin_value');
+    switch (page) {
+        case 2:
+            pin.innerText = pin.innerText.slice(0, -1);
     }
+}
 
-    num_btn_backspace.onclick = bntBackClick;
+num_btn_backspace.onclick = bntBackClick;
 
 
-    const btnEscClick = () => {
-        beep_sound();
-        if (page !== 0) {
-            page = 10;
+const btnEscClick = () => {
+    beep_sound();
+    if (page !== 0) {
+        page = 10;
+        Print();
+        setTimeout(() => {
+            page = 12;
             Print();
-            setTimeout(() => {
-                page = 12;
-                Print();
-            }, 500);
-            setTimeout(() => {
-                page = 0;
-                Print();
-            }, 3000);
-        }
+        }, 500);
+        setTimeout(() => {
+            page = 0;
+            Print();
+        }, 3000);
     }
+}
 
-    num_btn_esc.onclick = btnEscClick;
+num_btn_esc.onclick = btnEscClick;
 
 
-    /** atm pages functions*/
-    const App = () => {
-        switch (page) {
-            case 0:
-                /** ad */
-                return (
-                    <div/>
-                );
-            case 1:
-                /** Langue choose */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>ENG</div>
-                        </div>
-                        <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>CZE</div>
-                        </div>
+/** atm pages functions*/
+const App = () => {
+    switch (page) {
+        case 0:
+            /** ad */
+            return (
+                <div/>
+            );
+        case 1:
+            /** Langue choose */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>ENG</div>
                     </div>
-                );
-            case 2:
-                /** Pin page */
-                return (
-                    <div className='menu'>
-                        <div className='page_msg long'>Enter a pin:</div>
-                        <div className='pin' id='pin'/>
-                        <div id='wrong'>Wrong pin!</div>
-                        <input className='pin_value' id='pin_value'/>
+                    <div className='page_msg'>Choose langue/<br/>Zvolte jazyk:</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>CZE</div>
                     </div>
-                );
-            case 3:
-                /** Menu */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn' id='bal'>Balance</div>
-                            <div className='atm_btn'>Withdraw</div>
-                            <div className='atm_btn'>Deposit</div>
-                            <div className='atm_btn'/>
-                        </div>
-                        <div id='right'>
-                            <div className='atm_btn'>Change pin</div>
-                            <div className='atm_btn'>Payment</div>
-                            <div className='atm_btn'/>
-                            <div className='atm_btn'/>
-                        </div>
+                </div>
+            );
+        case 2:
+            /** Pin page */
+            return (
+                <div className='menu'>
+                    <div className='page_msg long'>Enter a pin:</div>
+                    <div className='pin' id='pin'/>
+                    <div id='wrong'>Acess denied!<br/>Wrong pin</div>
+                    <input className='pin_value' id='pin_value'/>
+                </div>
+            );
+        case 3:
+            /** Menu */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn' id='bal'>Balance</div>
+                        <div className='atm_btn'>Withdraw</div>
+                        <div className='atm_btn'>Deposit</div>
+                        <div className='atm_btn'/>
                     </div>
-                );
-            case 4:
-                /** Balance */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div className='page_msg'>Your account balance is:<br/> $ {Blc}</div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>Menu</div>
-                        </div>
+                    <div id='right'>
+                        <div className='atm_btn'>Change pin</div>
+                        <div className='atm_btn'>Payment</div>
+                        <div className='atm_btn'/>
+                        <div className='atm_btn'/>
                     </div>
-                );
-            case 5:
-                /** Widthraw */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_short'>1$</div>
-                            <div className='atm_btn_short'>2$</div>
-                            <div className='atm_btn_short'>5$</div>
-                            <div className='atm_btn_short'>10$</div>
-                        </div>
-                        <div className='page_msg'>How much do you<br/> want to Withdraw?</div>
-                        <div id='right'>
-                            <div className='atm_btn_short'>20$</div>
-                            <div className='atm_btn_short'>50$</div>
-                            <div className='atm_btn_short'>Other</div>
-                            <div className='atm_btn_short'>Menu</div>
-                        </div>
+                </div>
+            );
+        case 4:
+            /** Balance */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
                     </div>
-                );
-            case 6:
-                /** Deposit */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_short'>1$</div>
-                            <div className='atm_btn_short'>2$</div>
-                            <div className='atm_btn_short'>5$</div>
-                            <div className='atm_btn_short'>10$</div>
-                        </div>
-                        <div className='page_msg'>How much do you<br/> want to Deposit?</div>
-                        <div id='right'>
-                            <div className='atm_btn_short'>20$</div>
-                            <div className='atm_btn_short'>50$</div>
-                            <div className='atm_btn_short'>Other</div>
-                            <div className='atm_btn_short'>Menu</div>
-                        </div>
+                    <div className='page_msg'>Your account balance is:<br/> $ {Blc}</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
                     </div>
-                );
-            case 7:
-                /** Choose Value*/
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>Menu</div>
-                        </div>
+                </div>
+            );
+        case 5:
+            /** Widthraw */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_short'>1$</div>
+                        <div className='atm_btn_short'>2$</div>
+                        <div className='atm_btn_short'>5$</div>
+                        <div className='atm_btn_short'>10$</div>
                     </div>
-                );
-            case 8:
-                /** Change pin */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>Menu</div>
-                        </div>
+                    <div className='page_msg'>How much do you<br/> want to Withdraw?</div>
+                    <div id='right'>
+                        <div className='atm_btn_short'>20$</div>
+                        <div className='atm_btn_short'>50$</div>
+                        <div className='atm_btn_short'>Other</div>
+                        <div className='atm_btn_short'>Menu</div>
                     </div>
-                );
-            case 9:
-                /** Payment */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn'>Menu</div>
-                        </div>
+                </div>
+            );
+        case 6:
+            /** Deposit */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_short'>1$</div>
+                        <div className='atm_btn_short'>2$</div>
+                        <div className='atm_btn_short'>5$</div>
+                        <div className='atm_btn_short'>10$</div>
                     </div>
-                );
-            case 10:
-                /** Loading */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div className='page_msg'>Loading...</div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
+                    <div className='page_msg'>How much do you<br/> want to Deposit?</div>
+                    <div id='right'>
+                        <div className='atm_btn_short'>20$</div>
+                        <div className='atm_btn_short'>50$</div>
+                        <div className='atm_btn_short'>Other</div>
+                        <div className='atm_btn_short'>Menu</div>
                     </div>
-                );
-            case 11:
-                /** Transaction Complete */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div className='page_msg'>Transaction complete</div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
+                </div>
+            );
+        case 7:
+            /** Choose Value*/
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
                     </div>
-                );
-            case 12:
-                /** Thanks */
-                return (
-                    <div className='menu'>
-                        <div id='left'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
-                        <div className='page_msg'>THANKS FOR YOUR VISIT<br/><a className='sucess_msg'>**SYSTEM FAILED
-                            SUCESFULLY**</a></div>
-                        <div id='right'>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                            <div className='atm_btn_i'/>
-                        </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
                     </div>
-                );
-        }
+                </div>
+            );
+        case 8:
+            /** Change pin */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 9:
+            /** Payment */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn'>Menu</div>
+                    </div>
+                </div>
+            );
+        case 10:
+            /** Loading */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Loading...</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
+        case 11:
+            /** Transaction Complete */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>Transaction complete</div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
+        case 12:
+            /** Thanks */
+            return (
+                <div className='menu'>
+                    <div id='left'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                    <div className='page_msg'>THANKS FOR YOUR VISIT<br/><a className='sucess_msg'>**SYSTEM FAILED
+                        SUCESFULLY**</a></div>
+                    <div id='right'>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                        <div className='atm_btn_i'/>
+                    </div>
+                </div>
+            );
     }
+}
 
 
-    export default App;
-
-
+export default App;

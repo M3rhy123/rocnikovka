@@ -358,7 +358,7 @@
 
 .card2_bank {
     position: absolute;
-    color: #236700;
+    color: #194f4f;
     font-family: 'Shadows Into Light', cursive;
     font-weight: bold;
     top: 3px;
@@ -378,7 +378,7 @@
     height: 12px;
     position: absolute;
     top: 5px;
-    filter: sepia(100%) hue-rotate(50deg) saturate(450%);
+    filter: sepia(100%) hue-rotate(125deg) saturate(450%);
 }
 
 .card_chip {
