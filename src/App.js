@@ -637,6 +637,7 @@ const num0 = () => {
 num_btn0.onclick = num0;
 
 const btnEnterClick = () => {
+
     beep_sound();
     let pin_num = document.getElementById('pin_value');
     let pin = document.getElementById('pin');
