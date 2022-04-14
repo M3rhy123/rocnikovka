@@ -728,7 +728,6 @@ const btnEscClick = () => {
 
 num_btn_esc.onclick = btnEscClick;
 
-
 /** atm pages functions*/
 const App = () => {
     switch (page) {
