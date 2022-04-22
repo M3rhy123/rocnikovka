@@ -183,8 +183,23 @@
 }
 
 .door:hover {
-    animation-name: example;
-    animation-duration: 4s;
+    animation-name: open;
+}
+
+
+@keyframes open {
+    0% {
+        height: 50px
+    }
+    20%{
+        height: 6px;
+    }
+    80%{
+        height: 6px;
+    }
+    100% {
+        height: 50px
+    }
 }
 
 .moeny{
@@ -201,6 +216,7 @@
     left: 35px;
     height: 25px;
     transform: skew(135deg);
+
 }
 
 #money2 {
@@ -218,18 +234,6 @@
 
 #money5 {
     bottom: 25px;
-}
-
-@keyframes example {
-    0% {
-        height: 50px
-    }
-    50% {
-        height: 6px
-    }
-    100% {
-        height: 50px
-    }
 }
 
 #num_btn_esc, #num_btn_backspace, #num_btn_empty_long, #num_btn_enter {

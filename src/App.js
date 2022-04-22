@@ -11,8 +11,12 @@ let led = document.getElementById('led')
 let led2 = document.getElementById('led2')
 let led3 = document.getElementById('led3')
 let led4 = document.getElementById('led4')
+let money_door = document.getElementById('money_door')
+let money_stack = document.getElementById('money_stack')
 
+let lastNum = 0;
 let Blc = 100;
+let Blc2 = 258;
 //let pin;
 let page = 0;
 
@@ -21,7 +25,6 @@ let sound1 = document.getElementById('sound1')
 let sound2 = document.getElementById('sound2')
 let sound3 = document.getElementById('sound3')
 let sound4 = document.getElementById('sound4')
-let sound5 = document.getElementById('sound5')
 
 const beep_sound = () => {
     setTimeout(() => {
@@ -31,13 +34,13 @@ const beep_sound = () => {
 
 const AcessX = () => {
     setTimeout(() => {
-        sound4.play();
+        sound3.play();
     }, 1);
 }
 
 const AcessOK = () => {
     setTimeout(() => {
-        sound5.play();
+        sound4.play();
     }, 1);
 }
 
@@ -112,7 +115,7 @@ const cardClick = () => {
         }, 2000);
 
         setTimeout(() => {
-            page = 1;
+            page = 2;
             Print();
         }, 3000);
     }
@@ -155,7 +158,7 @@ const card2Click = () => {
         }, 2000);
 
         setTimeout(() => {
-            page = 1;
+            page = 2;
             Print();
         }, 3000);
     }
@@ -172,19 +175,6 @@ const bnt1_click = () => {
                 page = 4;
                 Print();
             }, 1000);
-            page = 10;
-            Print();
-            break;
-        case 5:
-            Blc = Blc - 1;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
             page = 10;
             Print();
             break;
@@ -216,19 +206,6 @@ const bnt2_click = () => {
             page = 10;
             Print();
             break;
-        case 5:
-            Blc = Blc - 2;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
-            page = 10;
-            Print();
-            break;
         case 6:
             Blc = Blc + 2;
             setTimeout(() => {
@@ -256,20 +233,7 @@ const bnt3_click = () => {
             }, 1000);
             page = 10;
             Print();
-            break;
-        case 5:
-            Blc = Blc - 5;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
-            page = 10;
-            Print();
-            break;
+            break;;
         case 6:
             Blc = Blc + 5;
             setTimeout(() => {
@@ -296,19 +260,6 @@ const bnt4_click = () => {
                 page = 2;
                 Print();
             }, 1000);
-            page = 10;
-            Print();
-            break;
-        case 5:
-            Blc = Blc - 10;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
             page = 10;
             Print();
             break;
@@ -340,19 +291,6 @@ const bnt5_click = () => {
             page = 10;
             Print();
             break;
-        case 5:
-            Blc = Blc - 20;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
-            page = 10;
-            Print();
-            break;
         case 6:
             Blc = Blc + 20;
             setTimeout(() => {
@@ -381,19 +319,6 @@ const bnt6_click = () => {
             page = 10;
             Print();
             break;
-        case 5:
-            Blc = Blc - 50;
-            setTimeout(() => {
-                page = 3;
-                Print();
-            }, 1000);
-            setTimeout(() => {
-                page = 11;
-                Print();
-            }, 500);
-            page = 10;
-            Print();
-            break;
         case 6:
             Blc = Blc + 50;
             setTimeout(() => {
@@ -413,14 +338,6 @@ btn6.onclick = bnt6_click;
 const bnt7_click = () => {
     beep_sound();
     switch (page) {
-        case 5:
-            setTimeout(() => {
-                page = 7;
-                Print();
-            }, 1000);
-            page = 10;
-            Print();
-            break;
         case 6:
             setTimeout(() => {
                 page = 7;
@@ -508,12 +425,19 @@ btn8.onclick = bnt8_click;
 /** numpad logic */
 const num1 = () => {
     beep_sound();
+    lastNum = 1;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '1';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '1';
+            break;
+
     }
 }
 
@@ -521,12 +445,18 @@ num_btn1.onclick = num1;
 
 const num2 = () => {
     beep_sound();
+    lastNum = 2;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '2';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '2';
+            break;
     }
 }
 
@@ -534,12 +464,18 @@ num_btn2.onclick = num2;
 
 const num3 = () => {
     beep_sound();
+    lastNum = 3;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '3';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '3';
+            break;
     }
 }
 
@@ -547,12 +483,18 @@ num_btn3.onclick = num3;
 
 const num4 = () => {
     beep_sound();
+    lastNum = 4;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '4';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '4';
+            break;
     }
 }
 
@@ -560,12 +502,18 @@ num_btn4.onclick = num4;
 
 const num5 = () => {
     beep_sound();
+    lastNum = 5;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '5';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '5';
+            break;
     }
 }
 
@@ -573,12 +521,18 @@ num_btn5.onclick = num5;
 
 const num6 = () => {
     beep_sound();
+    lastNum = 6;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '6';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '6';
+            break;
     }
 }
 
@@ -586,12 +540,18 @@ num_btn6.onclick = num6;
 
 const num7 = () => {
     beep_sound();
+    lastNum = 7;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '7';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '7';
+            break;
     }
 }
 
@@ -599,12 +559,18 @@ num_btn7.onclick = num7;
 
 const num8 = () => {
     beep_sound();
+    lastNum = 8;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '8';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '8';
+            break;
     }
 }
 
@@ -612,12 +578,18 @@ num_btn8.onclick = num8;
 
 const num9 = () => {
     beep_sound();
+    lastNum = 9;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '9';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '9';
+            break;
     }
 }
 
@@ -625,12 +597,18 @@ num_btn9.onclick = num9;
 
 const num0 = () => {
     beep_sound();
+    lastNum = 0;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let widthraw = document.getElementById('widthraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '0';
+            break;
+        case 5:
+            widthraw.value = widthraw.value + '0';
+            break;
     }
 }
 
@@ -641,14 +619,15 @@ const btnEnterClick = () => {
     beep_sound();
     let pin_num = document.getElementById('pin_value');
     let pin = document.getElementById('pin');
+    let widthraw = document.getElementById('widthraw');
     let wrong = document.getElementById('wrong');
+    let smallMoney = document.getElementById('smallMoney');
 
     switch (page) {
         case 2:
             if (usedCard === 1) {
-                console.log(pin_num.innerText)
                 if (pin_num.value === pin1) {
-                    pin.innerHTML = '';
+                    pin.innerHTML = "";
                     pin_num.value = '';
                     AcessOK();
                     setTimeout(() => {
@@ -661,7 +640,7 @@ const btnEnterClick = () => {
                     }, 1000);
                 } else {
 
-                    pin.innerHTML = '';
+                    pin.innerHTML = "";
                     pin_num.value = '';
                     wrong.style.display = "block";
                     AcessX();
@@ -671,7 +650,7 @@ const btnEnterClick = () => {
                 }
             } else {
                 if (pin_num.value === pin2) {
-                    pin.innerHTML = '';
+                    pin.innerHTML = "";
                     pin_num.value = '';
                     AcessOK();
                     setTimeout(() => {
@@ -683,7 +662,7 @@ const btnEnterClick = () => {
                         Print();
                     }, 1000);
                 } else {
-                    pin.innerHTML = '';
+                    pin.innerHTML = "";
                     pin_num.value = '';
                     wrong.style.display = "block";
                     AcessX();
@@ -692,6 +671,53 @@ const btnEnterClick = () => {
                     }, 2500);
                 }
 
+            }
+            break;
+        case 5:
+            switch (usedCard) {
+                case 1:
+                    if (Blc >= widthraw.value) {
+                        Blc = Blc - widthraw.value;
+                        setTimeout(() => {
+                            money_stack.style.display = "none"
+                        }, 3000);
+                        money_door.style.animationName = "open";
+                        money_door.style.animationDuration = "6s";
+                        setTimeout(() => {
+                            page = 11;
+                            Print();
+                        }, 3500);
+                        setTimeout(() => {
+                            page = 3;
+                            Print();
+                        }, 5000);
+                    } else {
+                        smallMoney.style.display = "block";
+                        widthraw.style.display = "none";
+                        setTimeout(() => {
+                            page = 3;
+                            Print();
+                        }, 2000);
+                    }
+                    break;
+                case 2:
+                    if (Blc2 >= widthraw.value) {
+                        Blc2 = Blc2 - widthraw.value;
+                        setTimeout(() => {
+                            widthraw.value = 0;
+                            page = 3;
+                            Print();
+                        }, 2000);
+                    } else {
+                        smallMoney.style.display = "block";
+                        widthraw.style.display = "none"
+                        setTimeout(() => {
+                            widthraw.value = 0;
+                            page = 3;
+                            Print();
+                        }, 2000);
+                    }
+                    break;
             }
     }
 }
@@ -705,6 +731,7 @@ const bntBackClick = () => {
     switch (page) {
         case 2:
             pin.innerText = pin.innerText.slice(0, -1);
+            pin_num.value = (pin_num.value-lastNum)/10
     }
 }
 
@@ -807,17 +834,13 @@ const App = () => {
             /** Widthraw */
             return (
                 <div className='menu'>
-                    <div id='left'>
-                        <div className='atm_btn_short'>1$</div>
-                        <div className='atm_btn_short'>2$</div>
-                        <div className='atm_btn_short'>5$</div>
-                        <div className='atm_btn_short'>10$</div>
-                    </div>
-                    <div className='page_msg'>How much do you<br/> want to Withdraw?</div>
+                    <div className='page_msg long'>Enter widthraw value:</div>
+                    <input className='pin' id='widthraw'/>
+                    <div id='smallMoney'>Insufficient account<br/>balance.</div>
                     <div id='right'>
-                        <div className='atm_btn_short'>20$</div>
-                        <div className='atm_btn_short'>50$</div>
-                        <div className='atm_btn_short'>Other</div>
+                        <div className='atm_btn_i_s'/>
+                        <div className='atm_btn_i_s'/>
+                        <div className='atm_btn_i_s'/>
                         <div className='atm_btn_short'>Menu</div>
                     </div>
                 </div>
@@ -826,49 +849,18 @@ const App = () => {
             /** Deposit */
             return (
                 <div className='menu'>
-                    <div id='left'>
-                        <div className='atm_btn_short'>1$</div>
-                        <div className='atm_btn_short'>2$</div>
-                        <div className='atm_btn_short'>5$</div>
-                        <div className='atm_btn_short'>10$</div>
-                    </div>
-                    <div className='page_msg'>How much do you<br/> want to Deposit?</div>
-                    <div id='right'>
-                        <div className='atm_btn_short'>20$</div>
-                        <div className='atm_btn_short'>50$</div>
-                        <div className='atm_btn_short'>Other</div>
-                        <div className='atm_btn_short'>Menu</div>
-                    </div>
-                </div>
-            );
-        case 7:
-            /** Choose Value*/
-            return (
-                <div className='menu'>
-                    <div id='left'>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                    </div>
-                    <div id='right'>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn'>Menu</div>
-                    </div>
+                    <div className='page_msg long'>Enter a deposit value:</div>
+                    <div className='pin' id='deposit'/>
+                    <input className='pin_value' id='pin_value'/>
                 </div>
             );
         case 8:
             /** Change pin */
             return (
                 <div className='menu'>
-                    <div id='left'>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                    </div>
+                    <div className='page_msg long'>Enter a new pin:</div>
+                    <div className='pin' id='pin'/>
+                    <div id='wrong'>Change was <br/>success.</div>
                     <div id='right'>
                         <div className='atm_btn_i'/>
                         <div className='atm_btn_i'/>
@@ -955,6 +947,5 @@ const App = () => {
             );
     }
 }
-
 
 export default App;

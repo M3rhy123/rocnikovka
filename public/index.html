@@ -61,17 +61,16 @@
                 <div class="btn" id="num_btn_enter">ENTER ✅</div>
             </div>
         </div>
-        <div class="money_slot">
+        <div class="money_slot" >
             <div class="slot">
-                <div class="moeny">
-                    <div id="money5">
-                    </div>
+                <div class="moeny" id="money_stack">
+                    <div id="money5"></div>
                     <div id="money4"></div>
                     <div id="money3"></div>
                     <div id="money2"></div>
                     <div id="money"></div>
                 </div>
-                <div class="door"></div>
+                <div class="door" id="money_door"></div>
             </div>
         </div>
         <div class="panel">
@@ -91,7 +90,7 @@
                 <div class="card_type">DEBIT</div>
                 <div class="card_date">VALID<br/>THRU</div>
                 <div class="card_expiry-date">7/25</div>
-                <div class="card_owner">Josef Prokop Pekáč</div>
+                <div class="card_owner">Gordon Freeman</div>
                 <img class="card_logo" src="img/MasterCard_Logo.png" alt="master card logo"/>
             </div>
             <div class="card_body" id="card2">
@@ -115,12 +114,9 @@
         <source src="sound/card_sucess.wav" type="audio/wav"/>
     </audio>
     <audio id="sound3">
-        <source src="sound/led_on.wav" type="audio/wav"/>
-    </audio>
-    <audio id="sound4">
         <source src="sound/Access_denied.wav" type="audio/wav"/>
     </audio>
-    <audio id="sound5">
+    <audio id="sound4">
         <source src="sound/access_acepted.wav" type="audio/wav"/>
     </audio>
 
