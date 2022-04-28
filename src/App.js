@@ -801,10 +801,14 @@ const bntBackClick = () => {
     beep_sound();
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
+    let withdraw = document.getElementById('withdraw');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText.slice(0, -1);
             pin_num.value = (pin_num.value - lastNum) / 10
+            break;
+        case 8:
+            withdraw.value = (withdraw.value - lastNum) / 10
     }
 }
 
