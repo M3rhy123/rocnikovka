@@ -5,9 +5,9 @@
 4 - balance
 5 - widthraw
 6 - deposit
-7 - choose value
+7 -
 8 - change pin
-9 - payment
+9 - change success
 10 - loading
 11 - transaction complete
 12 - thanks

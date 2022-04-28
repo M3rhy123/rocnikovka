@@ -182,11 +182,6 @@
             hsl(0, 0%, 70%) 100%);
 }
 
-.door:hover {
-    animation-name: open;
-}
-
-
 @keyframes open {
     0% {
         height: 50px

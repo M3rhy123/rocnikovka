@@ -3,7 +3,6 @@ import Print from './index.js'
 
 let pin1 = "2756";
 let pin2 = "6969";
-console.log("Pin1: " + pin1 + " Pin2: " + pin2)
 let usedCard = 1;
 let card = document.getElementById('card')
 let card2 = document.getElementById('card2')
@@ -80,6 +79,7 @@ num_btn.onclick = Pin_function;
 
 /** card load logic */
 const cardClick = () => {
+    console.log("Pin1: " + pin1 + " Pin2: " + pin2)
     usedCard = 1;
     if (page === 0) {
         card.style.transform = "translateY(-170px) translateX(50px) scale(0.75)"
@@ -123,6 +123,7 @@ const cardClick = () => {
 card.onclick = cardClick;
 
 const card2Click = () => {
+    console.log("Pin1: " + pin1 + " Pin2: " + pin2)
     usedCard = 2;
     if (page === 0) {
         card2.style.transform = "translateY(-320px) translateX(50px) scale(0.75)"
@@ -233,7 +234,7 @@ const bnt3_click = () => {
             }, 1000);
             page = 10;
             Print();
-            break;;
+            break;
         case 6:
             Blc = Blc + 5;
             setTimeout(() => {
@@ -311,14 +312,6 @@ btn5.onclick = bnt5_click;
 const bnt6_click = () => {
     beep_sound();
     switch (page) {
-        case 3:
-            setTimeout(() => {
-                page = 9;
-                Print();
-            }, 1000);
-            page = 10;
-            Print();
-            break;
         case 6:
             Blc = Blc + 50;
             setTimeout(() => {
@@ -422,20 +415,26 @@ const bnt8_click = () => {
 }
 btn8.onclick = bnt8_click;
 
+
 /** numpad logic */
 const num1 = () => {
     beep_sound();
     lastNum = 1;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
+
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '1';
             break;
         case 5:
-            widthraw.value = widthraw.value + '1';
+            withdraw.value = withdraw.value + '1';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '1';
             break;
 
     }
@@ -448,14 +447,18 @@ const num2 = () => {
     lastNum = 2;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '2';
             break;
         case 5:
-            widthraw.value = widthraw.value + '2';
+            withdraw.value = withdraw.value + '2';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '2';
             break;
     }
 }
@@ -467,14 +470,18 @@ const num3 = () => {
     lastNum = 3;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '3';
             break;
         case 5:
-            widthraw.value = widthraw.value + '3';
+            withdraw.value = withdraw.value + '3';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '3';
             break;
     }
 }
@@ -486,14 +493,18 @@ const num4 = () => {
     lastNum = 4;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '4';
             break;
         case 5:
-            widthraw.value = widthraw.value + '4';
+            withdraw.value = withdraw.value + '4';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '4';
             break;
     }
 }
@@ -505,14 +516,18 @@ const num5 = () => {
     lastNum = 5;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '5';
             break;
         case 5:
-            widthraw.value = widthraw.value + '5';
+            withdraw.value = withdraw.value + '5';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '5';
             break;
     }
 }
@@ -524,14 +539,18 @@ const num6 = () => {
     lastNum = 6;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '6';
             break;
         case 5:
-            widthraw.value = widthraw.value + '6';
+            withdraw.value = withdraw.value + '6';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '6';
             break;
     }
 }
@@ -543,14 +562,18 @@ const num7 = () => {
     lastNum = 7;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '7';
             break;
         case 5:
-            widthraw.value = widthraw.value + '7';
+            withdraw.value = withdraw.value + '7';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '7';
             break;
     }
 }
@@ -562,14 +585,18 @@ const num8 = () => {
     lastNum = 8;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '8';
             break;
         case 5:
-            widthraw.value = widthraw.value + '8';
+            withdraw.value = withdraw.value + '8';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '8';
             break;
     }
 }
@@ -581,14 +608,18 @@ const num9 = () => {
     lastNum = 9;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '9';
             break;
         case 5:
-            widthraw.value = widthraw.value + '9';
+            withdraw.value = withdraw.value + '9';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '9';
             break;
     }
 }
@@ -600,14 +631,18 @@ const num0 = () => {
     lastNum = 0;
     let pin = document.getElementById('pin');
     let pin_num = document.getElementById('pin_value');
-    let widthraw = document.getElementById('widthraw');
+    let withdraw = document.getElementById('withdraw');
+    let new_pin = document.getElementById('new_pin');
     switch (page) {
         case 2:
             pin.innerText = pin.innerText + '*';
             pin_num.value = pin_num.value + '0';
             break;
         case 5:
-            widthraw.value = widthraw.value + '0';
+            withdraw.value = withdraw.value + '0';
+            break;
+        case 8:
+            new_pin.innerText = new_pin.innerText + '0';
             break;
     }
 }
@@ -615,19 +650,18 @@ const num0 = () => {
 num_btn0.onclick = num0;
 
 const btnEnterClick = () => {
-
     beep_sound();
-    let pin_num = document.getElementById('pin_value');
     let pin = document.getElementById('pin');
-    let widthraw = document.getElementById('widthraw');
+    let pin_num = document.getElementById('pin_value');
+    let new_pin = document.getElementById('new_pin');
+    let withdraw = document.getElementById('withdraw');
     let wrong = document.getElementById('wrong');
     let smallMoney = document.getElementById('smallMoney');
-
     switch (page) {
         case 2:
             if (usedCard === 1) {
                 if (pin_num.value === pin1) {
-                    pin.innerHTML = "";
+                    pin.innerHTML = '';
                     pin_num.value = '';
                     AcessOK();
                     setTimeout(() => {
@@ -676,13 +710,15 @@ const btnEnterClick = () => {
         case 5:
             switch (usedCard) {
                 case 1:
-                    if (Blc >= widthraw.value) {
-                        Blc = Blc - widthraw.value;
+                    if (Blc >= withdraw.value) {
+                        Blc = Blc - withdraw.value;
+                        setTimeout(() => {
+                            money_door.style.animation = 'none';
+                            money_door.style.animation = "open 6s"
+                        }, 1);
                         setTimeout(() => {
                             money_stack.style.display = "none"
                         }, 3000);
-                        money_door.style.animationName = "open";
-                        money_door.style.animationDuration = "6s";
                         setTimeout(() => {
                             page = 11;
                             Print();
@@ -693,7 +729,7 @@ const btnEnterClick = () => {
                         }, 5000);
                     } else {
                         smallMoney.style.display = "block";
-                        widthraw.style.display = "none";
+                        withdraw.style.display = "none";
                         setTimeout(() => {
                             page = 3;
                             Print();
@@ -701,24 +737,61 @@ const btnEnterClick = () => {
                     }
                     break;
                 case 2:
-                    if (Blc2 >= widthraw.value) {
-                        Blc2 = Blc2 - widthraw.value;
+                    if (Blc2 >= withdraw.value) {
+                        Blc2 = Blc2 - withdraw.value;
                         setTimeout(() => {
-                            widthraw.value = 0;
+                            withdraw.value = 0;
                             page = 3;
                             Print();
                         }, 2000);
                     } else {
                         smallMoney.style.display = "block";
-                        widthraw.style.display = "none"
+                        withdraw.style.display = "none"
                         setTimeout(() => {
-                            widthraw.value = 0;
+                            withdraw.value = 0;
                             page = 3;
                             Print();
                         }, 2000);
                     }
                     break;
             }
+            break;
+        case 8:
+            switch (usedCard) {
+                case 1:
+                    pin1 = new_pin.innerText;
+                    setTimeout(() => {
+                        page = 10;
+                        Print();
+                    }, 100);
+                    setTimeout(() => {
+                        page = 9;
+                        Print();
+                    }, 1000);
+                    new_pin.value = '';
+                    break;
+                case 2:
+                    pin2 = new_pin.innerText;
+                    setTimeout(() => {
+                        page = 10;
+                        Print();
+                    }, 100);
+                    setTimeout(() => {
+                        page = 11;
+                        Print();
+                    }, 500);
+                    setTimeout(() => {
+                        page = 10;
+                        Print();
+                    }, 1000);
+                    setTimeout(() => {
+                        page = 3;
+                        Print();
+                    }, 1500);
+                    new_pin.value = '';
+                    break;
+            }
+            break;
     }
 }
 
@@ -731,7 +804,7 @@ const bntBackClick = () => {
     switch (page) {
         case 2:
             pin.innerText = pin.innerText.slice(0, -1);
-            pin_num.value = (pin_num.value-lastNum)/10
+            pin_num.value = (pin_num.value - lastNum) / 10
     }
 }
 
@@ -789,7 +862,7 @@ const App = () => {
                 <div className='menu'>
                     <div className='page_msg long'>Enter a pin:</div>
                     <div className='pin' id='pin'/>
-                    <div id='wrong'>Acess denied!<br/>Wrong pin</div>
+                    <div id='wrong' className='wrong'>Acess denied!<br/>Wrong pin</div>
                     <input className='pin_value' id='pin_value'/>
                 </div>
             );
@@ -805,7 +878,7 @@ const App = () => {
                     </div>
                     <div id='right'>
                         <div className='atm_btn'>Change pin</div>
-                        <div className='atm_btn'>Payment</div>
+                        <div className='atm_btn'/>
                         <div className='atm_btn'/>
                         <div className='atm_btn'/>
                     </div>
@@ -831,12 +904,12 @@ const App = () => {
                 </div>
             );
         case 5:
-            /** Widthraw */
+            /** Withdraw */
             return (
                 <div className='menu'>
-                    <div className='page_msg long'>Enter widthraw value:</div>
-                    <input className='pin' id='widthraw'/>
-                    <div id='smallMoney'>Insufficient account<br/>balance.</div>
+                    <div className='page_msg long'>Enter withdraw value:</div>
+                    <input className='pin' id='withdraw'/>
+                    <div id='smallMoney' className='wrong'>Insufficient account<br/>balance.</div>
                     <div id='right'>
                         <div className='atm_btn_i_s'/>
                         <div className='atm_btn_i_s'/>
@@ -859,13 +932,13 @@ const App = () => {
             return (
                 <div className='menu'>
                     <div className='page_msg long'>Enter a new pin:</div>
-                    <div className='pin' id='pin'/>
-                    <div id='wrong'>Change was <br/>success.</div>
+                    <div className='pin' id='new_pin'/>
+                    <div id='ch_success' className='wrong'>Change was <br/>success.</div>
                     <div id='right'>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn_i'/>
-                        <div className='atm_btn'>Menu</div>
+                        <div className='atm_btn_i_s'/>
+                        <div className='atm_btn_i_s'/>
+                        <div className='atm_btn_i_s'/>
+                        <div className='atm_btn_short'>Menu</div>
                     </div>
                 </div>
             );
@@ -879,6 +952,7 @@ const App = () => {
                         <div className='atm_btn_i'/>
                         <div className='atm_btn_i'/>
                     </div>
+                    <div className='page_msg'>Change success</div>
                     <div id='right'>
                         <div className='atm_btn_i'/>
                         <div className='atm_btn_i'/>
