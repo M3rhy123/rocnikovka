@@ -68,15 +68,6 @@ let num_btn_esc = document.getElementById('num_btn_esc')
 let num_btn_backspace = document.getElementById('num_btn_backspace')
 let num_btn_enter = document.getElementById('num_btn_enter')
 
-
-/** pin logic*/
-/*const star = "*";
-const Pin_function = () => {
-    document.getElementById('pin');;/*
-}
-num_btn.onclick = Pin_function;
-/** pages body */
-
 /** card load logic */
 const cardClick = () => {
     console.log("Pin1: " + pin1 + " Pin2: " + pin2)
@@ -332,10 +323,15 @@ const bnt7_click = () => {
     beep_sound();
     switch (page) {
         case 6:
+            Blc = Blc + 1000;
             setTimeout(() => {
-                page = 7;
+                page = 3;
                 Print();
             }, 1000);
+            setTimeout(() => {
+                page = 11;
+                Print();
+            }, 500);
             page = 10;
             Print();
             break;
@@ -713,7 +709,7 @@ const btnEnterClick = () => {
                     if (Blc >= withdraw.value) {
                         Blc = Blc - withdraw.value;
                         setTimeout(() => {
-                            money_door.style.animation = 'none';
+                            money_door.style.animation.repeat(1);
                             money_door.style.animation = "open 6s"
                         }, 1);
                         setTimeout(() => {
@@ -740,20 +736,28 @@ const btnEnterClick = () => {
                     if (Blc2 >= withdraw.value) {
                         Blc2 = Blc2 - withdraw.value;
                         setTimeout(() => {
-                            withdraw.value = 0;
+                            money_door.style.animation.repeat(1);
+                            money_door.style.animation = "open 6s"
+                        }, 1);
+                        setTimeout(() => {
+                            money_stack.style.display = "none"
+                        }, 3000);
+                        setTimeout(() => {
+                            page = 11;
+                            Print();
+                        }, 3500);
+                        setTimeout(() => {
                             page = 3;
                             Print();
-                        }, 2000);
+                        }, 5000);
                     } else {
                         smallMoney.style.display = "block";
-                        withdraw.style.display = "none"
+                        withdraw.style.display = "none";
                         setTimeout(() => {
-                            withdraw.value = 0;
                             page = 3;
                             Print();
                         }, 2000);
                     }
-                    break;
             }
             break;
         case 8:
@@ -926,9 +930,19 @@ const App = () => {
             /** Deposit */
             return (
                 <div className='menu'>
-                    <div className='page_msg long'>Enter a deposit value:</div>
-                    <div className='pin' id='deposit'/>
-                    <input className='pin_value' id='pin_value'/>
+                        <div id='left'>
+                            <div className='atm_btn_short'>1$</div>
+                            <div className='atm_btn_short'>2$</div>
+                            <div className='atm_btn_short'>5$</div>
+                            <div className='atm_btn_short'>10$</div>
+                        </div>
+                        <div className='page_msg'>How much do you<br/> want to Deposit?</div>
+                        <div id='right'>
+                            <div className='atm_btn_short'>20$</div>
+                            <div className='atm_btn_short'>50$</div>
+                            <div className='atm_btn_short'>1 000$</div>
+                            <div className='atm_btn_short'>Menu</div>
+                        </div>
                 </div>
             );
         case 8:
