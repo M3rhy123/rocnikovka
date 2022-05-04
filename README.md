@@ -1,7 +1,7 @@
 # Seminar work project
 
 This work is made as semiar project of a student 3rd year of High school
-You can find here: [Click me!](https://vercel.com/m3rhy123/rocnikovka)
+You can find here: [Click me!](https://rocnikovka.vercel.app/)
  
 ## Main project
 
